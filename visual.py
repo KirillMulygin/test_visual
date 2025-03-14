@@ -73,7 +73,7 @@ points = go.Scatter3d(
     y=y_points,
     z=z_points,
     mode='markers',
-    marker=dict(size=4, color='red'),
+    marker=dict(size=8, color='red'),
     showlegend=False,
     hovertemplate="Ресурсы: %{customdata[0]}<br>Процессы: %{customdata[1]}<br>Функции управления: %{customdata[2]}<extra></extra>",
     customdata=[[mapping_resources.get(x, "Неизвестно"), mapping_processes.get(y, "Неизвестно"), mapping_functions.get(z, "Неизвестно")] for x, y, z in zip(x_points, y_points, z_points)]
