@@ -84,9 +84,21 @@ fig = go.Figure(data=lines + [points])
 
 fig.update_layout(
     scene=dict(
-        xaxis_title="X - Ресурсы",
-        yaxis_title="Y - Процессы",
-        zaxis_title="Z - Функции управления"
+        xaxis=dict(
+            title="X - Ресурсы",
+            tickvals=list(mapping_resources.keys()),  # Значения на оси X
+            ticktext=list(mapping_resources.values())  # Подписи
+        ),
+        yaxis=dict(
+            title="Y - Процессы",
+            tickvals=list(mapping_processes.keys()),  # Значения на оси Y
+            ticktext=list(mapping_processes.values())  # Подписи
+        ),
+        zaxis=dict(
+            title="Z - Функции управления",
+            tickvals=list(mapping_functions.keys()),  # Значения на оси Z
+            ticktext=list(mapping_functions.values())  # Подписи
+        )
     ),
     title='Модель функциональной структуры управления имуществом',
     width=800, height=800
